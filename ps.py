@@ -23,7 +23,9 @@ def ps():
         7. vsize
     '''
     for pid in filter_processes():
-        stat = open('/proc/{}/stat'.format(pid)).read().split()
-        print ('pid: {},  ppid: {},  comm: {},  utime: {},  '
+        proc_file = open('/proc/{}/stat'.format(pid))
+        stat = proc_file.read().split()
+        proc_file.close()
+        print ('pid: {},  ppid: {},  comm:s {},  utime: {},  '
         + 'num_threads: {},  processor: {},  vsize: {}').format(pid, stat[3], stat[1][1:-1], stat[13], stat[19], stat[38], stat[22])
 ps()
