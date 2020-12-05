@@ -1,2 +1,2 @@
 # linux-ps
-Implemented ps command in linux bash
+Implement ps command in linux bash using python (prepared as part of ‘Odyssey’ program, cyber major).
